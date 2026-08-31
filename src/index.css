@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: 'Cairo', sans-serif;
+  --color-primary: #0d5c63;
+  --color-primary-dark: #094247;
+  --color-primary-light: #14737c;
+  --color-secondary: #c9a227;
+  --color-secondary-hover: #b08a1d;
+  --color-accent: #c9a227;
+  --color-accent-light: #e8c547;
+  --color-bg-site: #f8fafc;
+  --color-text-main: #1e293b;
+  --color-text-dim: #64748b;
+  --color-border: #e2e8f0;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-site);
+    min-height: 100vh;
+}
+
+body {
+    font-family: var(--font-cairo);
+    background-color: var(--color-bg-site);
+    color: var(--color-text-main);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
